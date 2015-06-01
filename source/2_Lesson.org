@@ -4,6 +4,7 @@
 #+HTML_HEAD_EXTRA: <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 #+HTML_HEAD_EXTRA: <script src="js/navbar.js" type="text/javascript"></script>
 #+OPTIONS: f:nil author:nil num:1 creator:nil timestamp:nil toc:nil html-style:nil
+#+OPTIONS: ^:nil
 
 #+TITLE: Sonic Pi
 #+AUTHOR: Marc Scott
