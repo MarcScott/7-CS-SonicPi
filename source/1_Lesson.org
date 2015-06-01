@@ -90,7 +90,6 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-
 * Music with Code
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
@@ -214,7 +213,7 @@ play 45
 - Now try and play the second 4 bars
 - Here's the sheet music
 #+begin_html
-<iframe src="http://docs.google.com/gview?url=http://makingmusicfun.net/pdf/sheet_music/blue-danube-piano.pdf&embedded=true" style="width:600px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://docs.google.com/gview?url=http://makingmusicfun.net/pdf/sheet_music/blue-danube-piano.pdf&embedded=true" style="width:600px; height:700px;" frameborder="0"></iframe>
 #+end_html
 - And here's a table showing the =play= arguments for the notes.
 | Name      | Value |
