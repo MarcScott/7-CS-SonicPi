@@ -90,8 +90,7 @@
 :HTML_CONTAINER_CLASS: save
 :END:
 
-
-* Music with Code
+* Samples and Loops
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: activity
 :END:
@@ -99,144 +98,99 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: learn
 :END:
-- Sonic Pi is an application that allows you to create music using code.
-- In this project you'll learn how to use the techniques you have learned in Computer Science to generate music.
-- If you want to access these resources from home and your have a Raspberry Pi, you'll find Sonic Pi is already installed. If you're on Windows or OSX then you can download and install Sonic Pi [[http://sonic-pi.net/][here]].
-** Try It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: try
-:END:
-- Open up Sonic Pi.
-- You should see a screen that looks something like this.
-[[http://www.sean.co.uk/books/raspberry-pi-for-dummies/gfx/sonic-pi.gif]]
-- You can write your code in =Workspace 1=
+- As well as playing single notes, we can also play pre-recorded sounds using Sonic Pi.
+- These are called =samples= and there are plenty to choose from.
 ** Code It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: code
 :END:
-- Try typing the following line.
+- Let's play a sample.
 #+begin_src python
-play 48
+sample :drum_snare_hard
 #+end_src
-- Now press =Alt= and the =r= key to run the code and make sure you have your headphones on.
-** Code It
+** Learn It
 :PROPERTIES:
-:HTML_CONTAINER_CLASS: code
+:HTML_CONTAINER_CLASS: learn
 :END:
-- So that was a single note. Let's try playing some more.
+- The sample function takes the name of the sample as an argument, but it can take other argument as well.
+- We can change the length of time it plays for using =rate=
 #+begin_src python
-play 48
-play 52
-play 55
+sample :drum_snare_hard, rate: 0.5
 #+end_src
-- You'll notice that when you hit =Alt+r= this time, that the three notes play simultaneously.
-- If we don't want that, and instead want to put a break in between the notes being played, we need to use the =sleep= function. This takes a time in seconds as an argument.
+- This doubles the time the sample plays for.
+- We can also change the volume of the sample.
 #+begin_src python
-play 48
-sleep 0.6
-play 52
-sleep 0.6
-play 55
-sleep 0.6
-play 55
-#+end_src
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- Does that sound a little familiar?
-- Let's add some simultaneous notes into it. As you saw earlier, if we don't use the =sleep= function then notes are played at the same time.
-#+begin_src python
-play 48
-sleep 0.4
-play 52
-sleep 0.4
-play 55
-sleep 0.4
-play 55
-play 48
-sleep 0.4
-play 52
-play 55
-sleep 0.4
-play 52
-play 55
-play 64
-play 67
-#+end_src
-** Code It
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: code
-:END:
-- Sounding good?
-- Let's finish off the first bar of the the first four bars of The Blue Danube.
-#+begin_html
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ryyL6l2aGk0" frameborder="0" allowfullscreen></iframe>
-#+end_html
-#+begin_src python
-play 48
-sleep 0.4
-play 52
-sleep 0.4
-play 55
-sleep 0.4
-play 55
-play 48
-sleep 0.4
-play 52
-play 55
-sleep 0.4
-play 52
-play 55
-play 64
-play 67
-sleep 0.4
-play 48
-play 64
-play 67
-sleep 0.4
-play 52
-play 55
-sleep 0.4
-play 52
-plat 55
-play 67
-play 64
-sleep 0.4
-play 67
-play 64
-play 45
+sample :drum_snare_hard, rate: 0.5, amp: 3
 #+end_src
 ** Try It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: try
 :END:
-- Now try and play the second 4 bars
-- Here's the sheet music
-#+begin_html
-<iframe src="http://docs.google.com/gview?url=http://makingmusicfun.net/pdf/sheet_music/blue-danube-piano.pdf&embedded=true" style="width:600px; height:700px;" frameborder="0"></iframe>
-#+end_html
-- And here's a table showing the =play= arguments for the notes.
-| Name      | Value |
-|-----------+-------|
-| Bass C    |    48 |
-| Bass D    |    50 |
-| Bass E    |    52 |
-| Bass F    |    53 |
-| Bass G    |    55 |
-| A         |    57 |
-| B         |    59 |
-| C         |    60 |
-| D         |    62 |
-| E         |    64 |
-| F         |    65 |
-| G         |    67 |
-| Treble A |    69 |
-| Treble B |    71 |
-| Treble C |    72 |
+- Play around with =rate= and =amp=
+- Can you make a sound like thunder?
+- Can you make a sound like a gentle tap on a window?
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Have a play around with some other samples.
+- When you start typing =sample := into the workspace you'll be presented with all the sample available.
+- Have a go at these:
+  - sample :ambi_choir
+  - sample :ambi_glass_hum
+  - sample :guit_e_fifths
+- Change the =amp= and =rate= of the samples you choose to see how they are altered.
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- In music, drumming tends to be fairly repetitive.
+- We'll rarely want to play just a single drum beat. More likely, we'll want to play the beat 50 times or more.
+- We could do this by simply repeating the same function calls, over and over again.
+#+begin_src python
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+sleep 0.5
+sample :drum_snare_hard
+#+end_src
+- But as you've learned previously, when coding, if we want to do something multiple times, it's easiest to use a loop.
+** Code It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: code
+:END:
+- Try the following.
+#+begin_src python
+  4.times do
+      sample :drum_snare_hard
+      sleep 0.5
+  end
+#+end_src
+- The indentation is optional, but helps you see which elements of the code are within the loop.
+- Play this and see what happens.
+** Try It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: try
+:END:
+- Now try playing with the =amp= and =rate= of the sample along with the length of =sleep=
+** Learn It
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: learn
+:END:
+- We can also nest loops within loops.
+#+begin_src python
+4.times do
+    sample :drum_snare_hard, rate: 0.5, amp: 2
+    3.times do
+        sample :drum_snare_hard, rate: 1.5
+    end
+end
+#+end_src
 ** Badge It
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: badge
 :END:
-- Choose a simple tune or create your own short composition using Sonic Pi.
-- Use the =Rec= button to record it playing and save it as a .wav file.
+- Create a cool bass line using samples and loops.
+- Make sure you're experimenting with different samples and their =rate= and =amp= arguments.
