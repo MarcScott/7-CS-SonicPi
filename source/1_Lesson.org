@@ -198,7 +198,7 @@ play 52
 play 55
 sleep 0.4
 play 52
-plat 55
+play 55
 play 67
 play 64
 sleep 0.4
