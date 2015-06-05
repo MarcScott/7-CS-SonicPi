@@ -21,7 +21,7 @@
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:      
-* COMMENT [[file:pages/3_Lesson.html][Week 3 - Inputs and Outputs]
+* [[file:pages/3_Lesson.html][Week 3 - Synths and Threads]]
 :PROPERTIES:
 :HTML_CONTAINER_CLASS: link-heading
 :END:
