@@ -215,6 +215,8 @@ play 45
 #+begin_html
 <iframe src="https://docs.google.com/gview?url=http://makingmusicfun.net/pdf/sheet_music/blue-danube-piano.pdf&embedded=true" style="width:600px; height:700px;" frameborder="0"></iframe>
 #+end_html
+- Here's a guide for which notes or which
+[[http://mag.pianotut.ru/i/mag.pianotut.ru/ipi/32ef44be07737fdbe431c8c40f330a33.jpg]]
 - And here's a table showing the =play= arguments for the notes.
 | Name      | Value |
 |-----------+-------|
